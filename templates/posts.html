@@ -35,7 +35,9 @@
                     <p>{{post.body}}</p>
 
                     <div class="pic">
+                      {% if post.image.url %}
                         <img src="{{ post.image.url }}">  
+                        {% endif %}
                         
                         <form action="{% url 'like_post' post.pk %}" method="POST">
                             {% csrf_token %}
